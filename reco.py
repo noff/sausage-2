@@ -21,7 +21,7 @@ def reco():
             labels = response.label_annotations
             serialized = ' '.join([proto.Message.to_dict(tag)['description'].lower() for tag in labels])
 
-            if 'cucumber' in serialized:
+            if 'cucumber' in serialized or 'arthropod' in serialized or 'insect' in serialized:
                 variants = [
                     'Вот зеленый молодец. Он зовется…',
                     'сервис не поддерживает определение огурцов',
