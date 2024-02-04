@@ -13,6 +13,7 @@ app = Flask(__name__)
 def reco():
     try:
         file_uri = request.args.get('url')
+        file_uri = 'https://i.ibb.co/dDfvLBW/1707040315803.jpg'
         if file_uri:
             client = vision.ImageAnnotatorClient()
             image = vision.Image()
@@ -50,7 +51,14 @@ def reco():
                     'уберите колбасу от ребенка!'
                 ]
                 return {'result': random.choice(variants)}
+            else:
+                variants = [
+                    'что-то непонятное',
+                    'загадочно',
+                    'я не знаю, что это'
+                ]
+                return {'result': random.choice(variants)}
         else:
-            return  {'result': 'ссылку забыл, ссылочку!'}
+            return {'result': 'ссылку забыл, ссылочку!'}
     except TypeError:
         return {'result': 'что-то не срослось'}
