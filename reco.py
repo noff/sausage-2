@@ -13,7 +13,6 @@ app = Flask(__name__)
 def reco():
     try:
         file_uri = request.args.get('url')
-        file_uri = 'https://i.ibb.co/dDfvLBW/1707040315803.jpg'
         if file_uri:
             client = vision.ImageAnnotatorClient()
             image = vision.Image()
