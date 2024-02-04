@@ -50,12 +50,20 @@ def reco():
                     'уберите колбасу от ребенка!'
                 ]
                 return {'result': random.choice(variants)}
+            elif 'food' in serialized or 'fast food' in serialized:
+                variants = [
+                    'возможно, сосиска',
+                    'скорее всего тут есть сосиска',
+                    '50/50'
+                ]
+                return {'result': random.choice(variants)}
             else:
                 variants = [
                     'что-то непонятное',
                     'загадочно',
                     'я не знаю, что это'
                 ]
+                print(serialized)
                 return {'result': random.choice(variants)}
         else:
             return {'result': 'ссылку забыл, ссылочку!'}
