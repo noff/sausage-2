@@ -21,14 +21,14 @@ def reco():
             labels = response.label_annotations
             serialized = ' '.join([proto.Message.to_dict(tag)['description'].lower() for tag in labels])
 
-            if 'cucumber' in serialized or 'arthropod' in serialized or 'insect' in serialized:
+            if 'cucumber' in serialized or 'arthropod' in serialized or 'insect' in serialized or 'plant' in serialized:
                 variants = [
                     'Вот зеленый молодец. Он зовется…',
                     'сервис не поддерживает определение огурцов',
                     'куда вы со своими огурцами лезете?'
                 ]
                 return {'result': random.choice(variants)}
-            elif 'sausage' in serialized:
+            elif 'sausage' in serialized or 'finger' in serialized:
                 variants = [
                     'сосиска!!!!11111',
                     'о, сосисон!',
