@@ -58,6 +58,14 @@ def reco():
                     'здесь точно есть сосиска, даже если ее не видно'
                 ]
                 return {'result': random.choice(variants)}
+            elif 'human body' in serialized:
+                variants = [
+                    'оно тебе надо было?',
+                    'уберите детей из зала',
+                    'очень смешно',
+                    'я смотрю тут петросян завелся'
+                ]
+                return {'result': random.choice(variants)}
             else:
                 variants = [
                     'что-то непонятное',
